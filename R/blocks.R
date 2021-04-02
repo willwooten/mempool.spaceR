@@ -30,3 +30,18 @@ block_details <- function(hash){
     difficulty = block$difficulty
   )
 }
+
+
+## Returns the confirmation status of a block. Available fields: 
+## in_best_chain (boolean, false for orphaned blocks), next_best 
+## (the hash of the next block, only available for blocks in the best chain).
+
+block_confirmation_status <- function(hash){
+  url <- paste0("https://mempool.space/api/block/", hash, "/status")
+  block <- jsonlite::fromJSON(url)
+  data.frame(
+    in_best_chain = block$in_best_chain, 
+    height = block$height, 
+    next_best = ifelse(is.null(block$next_best), "NULL", block$next_best)
+  )
+}
