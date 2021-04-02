@@ -54,4 +54,10 @@ block_transactions <- function(hash){
   data.frame(txid = df)
 }
 
+## Returns the transaction at index within the specified block.
+
+block_tx_index <- function(hash, index){
+  url <- paste0("https://mempool.space/api/block/", hash, "/txid/", index)
+  read_lines(url)
+}
 
