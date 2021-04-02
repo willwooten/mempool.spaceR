@@ -15,3 +15,12 @@ unconfirmed_transactions_count <- function(){
   df$count
 }
 
+## Returns a list of the last 10 transactions to enter the 
+## mempool. Each transaction object contains simplified 
+## overview data with the following fields: 
+## txid, fee, vsize, and value.
+
+recent_transactions <- function(){
+  url <- "https://mempool.space/api/mempool/recent"
+  jsonlite::fromJSON(url)
+}
