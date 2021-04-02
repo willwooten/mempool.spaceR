@@ -5,6 +5,12 @@ block_latest_hash <- function(){
   read_lines(url)
 }
 
+## Returns the hash of the block currently at height
+
+block_hash <- function(height){
+  url <- paste0("https://mempool.space/api/block-height/", height)
+  read_lines(url)
+}
 
 ## Returns details about a block. Available fields: 
 ## id, height, version, timestamp, bits, nonce, merkle_root, 
@@ -60,4 +66,5 @@ block_tx_index <- function(hash, index){
   url <- paste0("https://mempool.space/api/block/", hash, "/txid/", index)
   read_lines(url)
 }
+
 
