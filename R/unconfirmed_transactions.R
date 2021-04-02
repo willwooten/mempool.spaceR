@@ -3,7 +3,7 @@
 
 unconfirmed_transactions_txids <- function(){
   url <- "https://mempool.space/api/mempool/txids"
-  df <- fromJSON(url)
+  df <- jsonlite::fromJSON(url)
   data.frame(txid = df)
 }
 
@@ -11,7 +11,7 @@ unconfirmed_transactions_txids <- function(){
 
 unconfirmed_transactions_count <- function(){
   url <- "https://mempool.space/api/mempool"
-  df <- fromJSON(url)
+  df <- jsonlie::fromJSON(url)
   df$count
 }
 
