@@ -45,3 +45,13 @@ block_confirmation_status <- function(hash){
     next_best = ifelse(is.null(block$next_best), "NULL", block$next_best)
   )
 }
+
+## Returns a data frame of all txids in the block.
+
+block_transactions <- function(hash){
+  url <- paste0("https://mempool.space/api/block/", hash, "/txids")
+  df <- jsonlite::fromJSON(url)
+  data.frame(txid = df)
+}
+
+
