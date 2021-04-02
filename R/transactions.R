@@ -12,3 +12,11 @@ tx_confirmation_status <- function(txid){
     block_time = df$block_time
   )
 }
+
+## Returns a transaction serialized as hex.
+
+tx_hex <- function(txid){
+  url <- paste0("https://mempool.space/api/tx/", txid, "/hex")
+  readLines(url, warn = FALSE)
+  
+}
