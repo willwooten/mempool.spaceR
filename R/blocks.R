@@ -1,6 +1,6 @@
 ## Returns the hash of the last block.
 
-latest_block_hash <- function(){
+block_latest_hash <- function(){
   url <- "https://mempool.space/api/blocks/tip/hash"
   read_lines(url)
 }
