@@ -3,7 +3,7 @@
 ## and also minimum fee currently being kept in 
 ## the mempool
 
-recommended_fees <- function (){
+recommended_fees <- function(){
   url <- "https://mempool.space/api/v1/fees/recommended"
   
   list <- jsonlite::fromJSON(url)
