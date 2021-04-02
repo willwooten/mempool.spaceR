@@ -5,6 +5,13 @@ block_latest_hash <- function(){
   read_lines(url)
 }
 
+## Returns the height of the last block.
+
+block_latest_height <- function(){
+  url <- "https://mempool.space/api/blocks/tip/height"
+  read_lines(url)
+}
+
 ## Returns the hash of the block currently at height
 
 block_hash <- function(height){
