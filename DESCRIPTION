@@ -1,0 +1,4 @@
+Package: mempool.spaceR
+Type: Package
+Title: API tool for mempool.space
+Version: 0.0.1.0
