@@ -1,5 +1,5 @@
 # mempool.spaceR
-R Package for mempool.space API
+R Package for [mempool.space](https://mempool.space/) API
 
 ## Mempool Functions
 
