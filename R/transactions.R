@@ -1,4 +1,4 @@
-## Returns a list with 3 data frames about a transaction. 
+## Returns a list with 4 data frames about a transaction. 
 ## Available fields: txid, version, locktime, 
 ## size, weight, fee, vin, vout, and status.
 
@@ -13,12 +13,18 @@ tx_details <- function(txid){
     locktime = df$locktime, 
     size = df$size, 
     weight = df$weight,
-    fee = df$fee, 
-    confirmed = df$status$confirmed, 
-    block_height = df$status$block_height, 
-    block_hash = df$status$block_hash, 
-    block_time = df$status$block_time 
+    fee = df$fee
   )
+  if(df$status$confirmed == TRUE){
+    df_list[["status"]] <- data.frame(
+      confirmed = df$status$confirmed, 
+      block_height = df$status$block_height, 
+      block_hash = df$status$block_hash, 
+      block_time = df$status$block_time 
+    )} else {
+      df_list[["status"]] <- data.frame(
+        confirmed = df$status$confirmed)
+    }
   
   df_list[["vin"]] <- df$vin
   df_list[["vout"]] <- df$vout
