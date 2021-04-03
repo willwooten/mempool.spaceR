@@ -71,7 +71,6 @@ tx_merkle_bitcoind <- function(txid){
 ## pos = The 0-based index of the position of the transaction 
 ## in the ordered list of transactions in the block.
 
-
 tx_merkle_electrum <- function(txid){
   url <- paste0("https://mempool.space/api/tx/", txid, "/merkle-proof")
   df <- jsonlite::fromJSON(url)
@@ -82,3 +81,12 @@ tx_merkle_electrum <- function(txid){
     pos = df$pos
   )
 }
+
+## Returns the spending status of all transaction outputs.
+
+tx_outspends <- function(txid){
+  url <- paste0("https://mempool.space/api/tx/", txid , "/outspends")
+  df <- jsonlite::fromJSON(url)
+}
+
+
