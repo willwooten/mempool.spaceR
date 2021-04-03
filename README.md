@@ -3,7 +3,7 @@ R Package for mempool.space API
 
 ## Mempool Functions
 
-'recommended_fees()' - Returns a dataframe of current recommended fee levels.
+<code>recommended_fees()</code> - Returns a dataframe of current recommended fee levels.
 'projected_blocks()' - Returns current mempool as projected blocks.
 'unconfirmed_transactions_txids()' - Returns full list of txids in the mempool.
 'unconfirmed_transactions_count()' - Returns current count of unconfirmed transactions.
