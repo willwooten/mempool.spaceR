@@ -2,21 +2,21 @@
 
 block_latest_hash <- function(){
   url <- "https://mempool.space/api/blocks/tip/hash"
-  read_lines(url)
+  readr::read_lines(url)
 }
 
 ## Returns the height of the last block.
 
 block_latest_height <- function(){
   url <- "https://mempool.space/api/blocks/tip/height"
-  read_lines(url)
+  readr::read_lines(url)
 }
 
 ## Returns the hash of the block currently at height
 
 block_hash <- function(height){
   url <- paste0("https://mempool.space/api/block-height/", height)
-  read_lines(url)
+  readr::read_lines(url)
 }
 
 ## Returns details about a block. Available fields: 
@@ -71,7 +71,7 @@ block_transactions <- function(hash){
 
 block_tx_index <- function(hash, index){
   url <- paste0("https://mempool.space/api/block/", hash, "/txid/", index)
-  read_lines(url)
+  readr::read_lines(url)
 }
 
 

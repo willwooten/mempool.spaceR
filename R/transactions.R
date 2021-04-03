@@ -51,7 +51,7 @@ tx_confirmation_status <- function(txid){
 
 tx_hex <- function(txid){
   url <- paste0("https://mempool.space/api/tx/", txid, "/hex")
-  readLines(url, warn = FALSE)
+  readr::readLines(url, warn = FALSE)
 }
 
 ## Returns a transaction as binary data.
@@ -66,7 +66,7 @@ tx_binary <- function(txid, destfile){
 
 tx_merkle_bitcoind <- function(txid){
   url <- paste0("https://mempool.space/api/tx/", txid, "/merkleblock-proof")
-  readLines(url, warn = FALSE)
+  readr::readLines(url, warn = FALSE)
 }
 
 
