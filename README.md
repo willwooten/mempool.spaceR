@@ -4,32 +4,51 @@ R Package for mempool.space API
 ## Mempool Functions
 
 <code>recommended_fees()</code> - Returns a dataframe of current recommended fee levels.
-'projected_blocks()' - Returns current mempool as projected blocks.
-'unconfirmed_transactions_txids()' - Returns full list of txids in the mempool.
-'unconfirmed_transactions_count()' - Returns current count of unconfirmed transactions.
-'recent_transactions()' - Returns a list of the last 10 transactions to enter the mempool.
+
+<code>projected_blocks()</code> - Returns current mempool as projected blocks.
+
+<code>unconfirmed_transactions_txids()</code> - Returns full list of txids in the mempool.
+
+<code>unconfirmed_transactions_count()</code> - Returns current count of unconfirmed transactions.
+
+<code>recent_transactions()</code> - Returns a list of the last 10 transactions to enter the mempool.
 
 ## Block Functions
 
-'block_latest_hash()' - Returns the hash of the last block.
-'block_latest_height()' - Returns the height of the last block.
-'block_hash()' -Returns the hash of the block currently at height.
-'block_details()' - Returns details about a block.
-'block_confirmation_status()' - Returns the confirmation status of a block.
-'block_transactions()' - Returns a data frame of all txids in the block.
-'block_tx_index()' - Returns the transaction at index within the specified block.
+<code>block_latest_hash()</code> - Returns the hash of the last block.
+
+<code>block_latest_height()</code> - Returns the height of the last block.
+
+<code>block_hash()</code> -Returns the hash of the block currently at height.
+
+<code>block_details()</code> - Returns details about a block.
+
+<code>block_confirmation_status()</code> - Returns the confirmation status of a block.
+
+<code>block_transactions()</code> - Returns a data frame of all txids in the block.
+
+<code>block_tx_index()</code> - Returns the transaction at index within the specified block.
 
 ## Transaction Functions
 
-'tx_details()' - Returns a list with 3 data frames about a transaction.
-'tx_confirmation_status()' - Returns the confirmation status of a transaction. 
-'tx_hex()' - Returns a transaction serialized as hex.
-'tx_binary()' - Returns a transaction as binary data.
-'tx_merkle_bitcoind()' - Returns a merkle inclusion proof for the transaction using bitcoind's format.
-'tx_merkle_electrum()' - Returns a merkle inclusion proof for the transaction using Electrum's format.
-'tx_outspends()' - Returns the spending status of all transaction outputs.
-'tx_outspends_status()' - Returns the spending status of a transaction output.
+<code>tx_details()</code> - Returns a list with 3 data frames about a transaction.
+
+<code>tx_confirmation_status()</code> - Returns the confirmation status of a transaction. 
+
+<code>tx_hex()</code> - Returns a transaction serialized as hex.
+
+<code>tx_binary()</code> - Returns a transaction as binary data.
+
+<code>tx_merkle_bitcoind()</code> - Returns a merkle inclusion proof for the transaction using bitcoind<code>s format.
+
+<code>tx_merkle_electrum()</code> - Returns a merkle inclusion proof for the transaction using Electrum<code>s format.
+
+<code>tx_outspends()</code> - Returns the spending status of all transaction outputs.
+
+<code>tx_outspends_status()</code> - Returns the spending status of a transaction output.
 
 ## Address Functions
-'address_onchain_stats()' - Returns details about an address on chain.
-'address_mempool_stats() '- Returns details about an address in mempool
+
+<code>address_onchain_stats()</code> - Returns details about an address on chain.
+
+<code>address_mempool_stats()</code>- Returns details about an address in mempool.
