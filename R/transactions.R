@@ -1,3 +1,31 @@
+## Returns a list with 3 data frames about a transaction. 
+## Available fields: txid, version, locktime, 
+## size, weight, fee, vin, vout, and status.
+
+tx_details <- function(txid){
+  df_list <- list()
+  url <- paste0("https://mempool.space/api/tx/", txid)
+  df <- jsonlite::fromJSON(url)
+  
+  df_list[[1]] <- data.frame(
+    txid = df$txid, 
+    version = df$version, 
+    locktime = df$locktime, 
+    size = df$size, 
+    weight = df$weight,
+    fee = df$fee, 
+    confirmed = df$status$confirmed, 
+    block_height = df$status$block_height, 
+    block_hash = df$status$block_hash, 
+    block_time = df$status$block_time 
+  )
+  
+  df_list[[2]] <- df$vin
+  df_list[[3]] <- df$vout
+  df_list
+}
+
+
 ## Returns the confirmation status of a transaction. 
 ## Available fields: confirmed (boolean), block_height (optional)
 ## and block_hash (optional).
