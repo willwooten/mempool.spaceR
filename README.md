@@ -39,9 +39,9 @@ R Package for mempool.space API
 
 <code>tx_binary()</code> - Returns a transaction as binary data.
 
-<code>tx_merkle_bitcoind()</code> - Returns a merkle inclusion proof for the transaction using bitcoind<code>s format.
+<code>tx_merkle_bitcoind()</code> - Returns a merkle inclusion proof for the transaction using bitcoind's format.
 
-<code>tx_merkle_electrum()</code> - Returns a merkle inclusion proof for the transaction using Electrum<code>s format.
+<code>tx_merkle_electrum()</code> - Returns a merkle inclusion proof for the transaction using Electrum's format.
 
 <code>tx_outspends()</code> - Returns the spending status of all transaction outputs.
 
