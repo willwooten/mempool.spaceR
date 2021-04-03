@@ -7,7 +7,7 @@ tx_details <- function(txid){
   url <- paste0("https://mempool.space/api/tx/", txid)
   df <- jsonlite::fromJSON(url)
   
-  df_list[[1]] <- data.frame(
+  df_list[["details"]] <- data.frame(
     txid = df$txid, 
     version = df$version, 
     locktime = df$locktime, 
@@ -20,8 +20,8 @@ tx_details <- function(txid){
     block_time = df$status$block_time 
   )
   
-  df_list[[2]] <- df$vin
-  df_list[[3]] <- df$vout
+  df_list[["vin"]] <- df$vin
+  df_list[["vout"]] <- df$vout
   df_list
 }
 
@@ -89,4 +89,20 @@ tx_outspends <- function(txid){
   df <- jsonlite::fromJSON(url)
 }
 
+## Returns the spending status of a transaction output. 
+## Available fields: spent (boolean), txid (optional), 
+## vin (optional), and status (optional, the status of the spending tx).
 
+tx_outspends_status <- function(txid, vout_index = 0){
+  url <- paste0("https://mempool.space/api/tx/", txid ,"/outspend/", vout_index)
+  df <- jsonlite::fromJSON(url)
+  data.frame(
+    spent = df$spent, 
+    txid = df$txid, 
+    vin = df$vin, 
+    confirmed = df$status$confirmed, 
+    block_height = df$status$block_height, 
+    block_hash = df$status$block_hash, 
+    block_time = df$status$block_time
+  )
+}
