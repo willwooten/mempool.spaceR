@@ -92,7 +92,7 @@ tx_merkle_electrum <- function(txid){
 
 tx_outspends <- function(txid){
   url <- paste0("https://mempool.space/api/tx/", txid , "/outspends")
-  df <- jsonlite::fromJSON(url)
+  jsonlite::fromJSON(url)
 }
 
 ## Returns the spending status of a transaction output. 
